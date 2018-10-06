@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{4E7DE9B6-E40F-4BCD-A989-1F5743BBD3E9}</ProjectGuid>
     <RootNamespace>Pac_man</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -69,14 +69,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\include;C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\include;C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\include;C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\lib\x86;C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\lib\x86;C:\Users\Krazy\Documents\Visual Studio 2015\Projects\SDL2\lib\win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>.\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\include;.\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\include;.\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\include;.\SDL2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\SDL2_ttf-devel-2.0.14-VC\SDL2_ttf-2.0.14\lib\x86;.\SDL2_mixer-devel-2.0.1-VC\SDL2_mixer-2.0.1\lib\x86;.\SDL2_image-devel-2.0.1-VC\SDL2_image-2.0.1\lib\x86;.\SDL2\lib\win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;SDL2main.lib;SDL2.lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -117,7 +118,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cutscene.cpp" />
+    <ClCompile Include="ghost.cpp" />
+    <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cutscene.h" />
+    <ClInclude Include="ghost.h" />
+    <ClInclude Include="level.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
